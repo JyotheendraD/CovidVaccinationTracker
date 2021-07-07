@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Corona Virus Vaccine Tracker</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="/home.css">
+</head>
+
+<body>
+<div class="container">
+<h1>Corona Virus Vaccine Tracker</h1>
+<p>This application assists you to see the covid vaccinations done on a day to day basis</p>
+<table class="table table-dark table-hover table-striped">
+    <tr>
+        <th>Location</th>
+        <th>Date</th>
+        <th>Vaccine</th>
+        <th>Source Url</th>
+        <th>Total Vaccines</th>
+        <th>People Vaccinated</th>
+        <th>People Fully Vaccinated</th>
+    </tr>
+    <tr th:each="Stat : ${Stats}">
+        <td th:text="${Stat.locations}"></td>
+        <td th:text="${Stat.date}"></td>
+        <td th:text="${Stat.vaccine}"></td>
+        <td th:text="${Stat.sourceUrl}"></td>
+        <td th:text="${Stat.totalVaccines}">0</td>
+        <td th:text="${Stat.peopleVaccinated}"></td>
+        <td th:text="${Stat.peopleFullyVaccinated}"></td>
+
+
+
+    </tr>
+</table>
+
+</div>
+</body>
+
+</html>
